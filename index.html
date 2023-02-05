@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+    body {
+        background: rgb(163, 115, 207);
+    }
+    .container {
+      display: flex;
+    
+      justify-content: center;
+    }
+.form_item {
+    margin-top: 150px;
+    border: solid 2px black;
+    height: 250px;
+    width: 250px;
+   
+  
+}
+button {
+    margin-top: 20px;
+    padding: 5px 10px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+}
+</style>
+<body>
+    
+            <form id="myForm">
+                <label>Enter your Emai:</label> <br>
+                <input type="email" id="email" required required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <br><br>
+                <div class="error-message"></div>
+                <label>Enter your password:</label> <br>
+                <input type="text" name="password"  required> <br>
+                <label>Enter your phone:</label> <br>
+                <input type="tel" name="phone" > <br>
+                <button id="submitBtn">submit</button>
+                <button id="editBtn">Edit</button><br>
+            </form>
+      <ul id="list-items">
+      
+        
+      </ul>
+     
+   
+
+<script>
+
+// function saveToLocalStorage(event) {
+//     event.preventDefault();
+
+//     const name = event.target.username.value;
+//     const password = event.target.password.value;
+//     const phone = event.target.phone.value;
+
+//     localStorage.setItem('name', name);
+//     localStorage.setItem(' password', password);
+//     localStorage.setItem('phone',phone);
+
+//     const obj = {
+//         name,
+//         password,
+//         phone
+//     }
+    
+// localStorage.setItem('obj.password', JSON.stringify(obj))
+// showOnthescreen(obj)
+
+// }
+
+// function showOnthescreen(obj) {
+//     const parentElem = document.getElementById('list-items')
+
+//     const childItem = document.createElement('li');
+//    childItem.textContent = obj.name+ '-' + obj.password + '-' + obj.phone;
+//      parentElem.appendChild(childItem)
+
+// }
+
+
+// const deleteButton = document.createElement('input');
+// deleteButton.type = "button"
+// deleteButton.value = 'delete'
+// deleteButton.onClick = () =>{
+//     localStorage.remove(' obj')
+//     parentElem.remove('childItem')
+// }
+
+// childItem.appendChild(deleteButton)
+// parentElem.appendChild(childItem)
+
+submitBtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  if (!email.checkValidity()) {
+    alert("Invalid email address. Please try again.");
+  }
+});
+
+const email = document.getElementById("#email");
+const submitBtn = document.getElementById("#submitBtn");
+
+submitBtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  if (!email.checkValidity()) {
+    
+    editBtn.addEventListener("click", function() {
+      email.focus();
+    });
+    alert("Invalid email address. Please try again.");
+    alert.appendChild(editBtn);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
